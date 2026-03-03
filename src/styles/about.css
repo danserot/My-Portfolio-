@@ -1,0 +1,473 @@
+.about {
+  padding: 90px 0;
+  color: aliceblue;
+}
+
+.about__container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.about__header {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.about__title {
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin: 0 0 10px;
+}
+
+.about__subtitle {
+  margin: 0;
+  opacity: 0.75;
+  font-size: 16px;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.about__content {
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.about__text {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.75;
+  opacity: 0.9;
+}
+
+.about__facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.fact {
+  display: flex;
+  gap: 10px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fact__icon {
+  font-size: 18px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.fact__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.fact__desc {
+  margin: 3px 0 0;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.about__cta {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+
+.btn--primary {
+  background: rgba(255, 255, 255, 0.92);
+  color: #0b0b0b;
+  border-color: transparent;
+}
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.about__media {
+  display: grid;
+  gap: 12px;
+}
+
+.about__mediaRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.shot {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.shot__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.01);
+}
+
+.shot__cap {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.shot--main {
+  height: 240px;
+}
+
+.shot--badge {
+  height: 160px;
+}
+
+@media (max-width: 900px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+  }
+  .shot--main {
+    height: 220px;
+  }
+}
+
+@media (max-width: 520px) {
+  .about__facts {
+    grid-template-columns: 1fr;
+  }
+  .about__mediaRow {
+    grid-template-columns: 1fr;
+  }
+}
+/* Montserrat (если еще не подключен) */
+.about,
+.about * {
+  font-family:
+    "Montserrat",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+}
+
+.about {
+  padding: 90px 0;
+  color: aliceblue;
+}
+
+.about__container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.about__header {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.about__title {
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  margin: 0 0 10px;
+}
+
+.about__subtitle {
+  margin: 0;
+  opacity: 0.75;
+  font-size: 16px;
+}
+
+/* NEW: rows stack */
+.about__stack {
+  display: grid;
+  gap: 22px;
+}
+
+.about__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* reverse second row */
+.about__row--reverse .about__media {
+  order: 2;
+}
+.about__row--reverse .about__content {
+  order: 1;
+}
+
+.about__content {
+  padding: 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.about__text {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.75;
+  opacity: 0.9;
+}
+
+.about__facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.fact {
+  display: flex;
+  gap: 10px;
+  padding: 12px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fact__title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.fact__desc {
+  margin: 3px 0 0;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.about__cta {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+  opacity: 0.95;
+}
+.btn--primary {
+  background: rgba(255, 255, 255, 0.92);
+  color: #0b0b0b;
+  border-color: transparent;
+}
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Media blocks */
+.about__media {
+  display: grid;
+  align-content: start;
+}
+
+/* gallery grid inside media */
+.about__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* make cards stable height */
+.gcard {
+  min-height: 260px; /* was 400; too tall for row layout */
+}
+
+/* OPTIONAL: hero look for first card if you want bigger */
+.about__row:first-child .gcard {
+  min-height: 360px;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .about__row {
+    grid-template-columns: 1fr;
+  }
+  .about__row--reverse .about__media,
+  .about__row--reverse .about__content {
+    order: initial;
+  }
+  .about__gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .about__facts {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== FIX: sizes for about images ===== */
+
+/* 1) card shouldn't force huge height */
+.gcard {
+  min-height: 0 !important;
+  height: auto;
+}
+
+/* 2) main photo block */
+.about__row:first-child .about__media .gcard {
+  height: 260px; /* было слишком много */
+}
+
+/* 3) gallery cards smaller */
+.about__gallery .gcard {
+  height: 150px;
+}
+
+/* 4) image fills card without stretching weirdly */
+.gcard__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Optional: on small screens make a bit taller */
+@media (max-width: 900px) {
+  .about__row:first-child .about__media .gcard {
+    height: 220px;
+  }
+  .about__gallery .gcard {
+    height: 170px;
+  }
+}
+/* Stack of rows */
+.about__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Row */
+.about__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Reverse layout */
+.about__row--reverse .about__media {
+  order: 2;
+}
+.about__row--reverse .about__content {
+  order: 1;
+}
+
+/* Image block */
+.about__media img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 18px;
+  transition: transform 0.3s ease;
+}
+
+.about__media img:hover {
+  transform: scale(1.02);
+}
+
+/* Text block */
+.about__content {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about__content h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+
+.about__content p {
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .about__row {
+    grid-template-columns: 1fr;
+  }
+
+  .about__row--reverse .about__media,
+  .about__row--reverse .about__content {
+    order: initial;
+  }
+
+  .about__media img {
+    height: 240px;
+  }
+}

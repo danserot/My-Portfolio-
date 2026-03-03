@@ -1,0 +1,61 @@
+.friendship-block {
+  font-family: Poppins, sans-serif;
+  background: rgb(61, 60, 60);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 3em auto;
+  overflow: hidden;
+}
+
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.photo-grid img {
+  width: calc(50% - 10px);
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 250px;
+}
+
+.friendship-text {
+  padding: 20px 30px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.friendship-text h2 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .photo-grid img {
+    width: 100%;
+  }
+}
+.go_btn {
+  background-color: #161513;
+  color: aliceblue;
+  border: aliceblue solid 2px;
+  width: 9em;
+  height: 2.5em;
+  border-radius: 5em;
+  font-family: Poppins, sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  justify-content: center;
+  align-items: center;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}

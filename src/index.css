@@ -1,13 +1,46 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #161513;
+  padding: 0 0;
+  margin: 0 0;
+}
+a {
+  color: aliceblue;
+  text-decoration: none;
+  font-family: "calibri", Courier, monospace;
+  font-size: medium;
+}
+.cursor-particle {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  /* БОЛЬШЕ РАЗМЕР */
+  width: 16px;
+  height: 16px;
+
+  /* ФИОЛЕТОВЫЙ ГРАДИЕНТ */
+  background: radial-gradient(
+    circle,
+    rgba(170, 0, 255, 0.95) 0%,
+    rgba(130, 0, 255, 0.6) 40%,
+    rgba(100, 0, 255, 0.1) 70%,
+    transparent 100%
+  );
+
+  box-shadow: 0 0 20px rgba(170, 0, 255, 0.8);
+
+  animation: particleFade 0.8s ease-out forwards;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@keyframes particleFade {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
 }
