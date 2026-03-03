@@ -61,7 +61,7 @@
   font-family:
     Plus Jakarta Sans,
     sans-serif;
-} /* Header Background */
+} 
 .headerblock {
   color: aliceblue;
   text-decoration: none;
@@ -75,4 +75,41 @@
 }
 .header_logo {
   height: 4.5em;
+}
+
+.header_text {
+  display: flex;
+}
+
+.hamburger {
+  display: none;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .header_text {
+    display: none; 
+  }
+
+  .hamburger {
+    display: block; 
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #191919;
+    padding: 20px;
+    border-radius: 12px;
+    gap: 14px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
 }

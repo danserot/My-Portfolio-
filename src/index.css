@@ -12,26 +12,24 @@ a {
 .cursor-particle {
   position: fixed;
   pointer-events: none;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
   z-index: 9999;
 
-  /* БОЛЬШЕ РАЗМЕР */
-  width: 16px;
-  height: 16px;
+  width: 60px;
+  height: 60px;
 
-  /* ФИОЛЕТОВЫЙ ГРАДИЕНТ */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+
   background: radial-gradient(
     circle,
-    rgba(170, 0, 255, 0.95) 0%,
-    rgba(130, 0, 255, 0.6) 40%,
-    rgba(100, 0, 255, 0.1) 70%,
-    transparent 100%
+    rgba(170, 0, 255, 0.15) 0%,
+    rgba(170, 0, 255, 0.08) 40%,
+    rgba(170, 0, 255, 0.03) 65%,
+    transparent 75%
   );
 
-  box-shadow: 0 0 20px rgba(170, 0, 255, 0.8);
-
-  animation: particleFade 0.8s ease-out forwards;
+  filter: blur(18px);
+  transition: opacity 0.2s ease;
 }
 
 @keyframes particleFade {

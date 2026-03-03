@@ -59,3 +59,174 @@
   align-items: center;
   margin-top: 2em;
 }
+.projects-filters {
+  width: min(1100px, 100%);
+  margin: 0 auto 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+
+  flex-wrap: nowrap; /* запрет переноса */
+  padding: 0; /* убрать внутренние отступы */
+  background: none; /* убрать стекло */
+  border: none; /* убрать рамку */
+  backdrop-filter: none; /* убрать blur */
+  overflow-x: auto;
+  overflow: visible;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    border-color 0.2s ease;
+  white-space: nowrap; /* запрещает перенос */
+}
+
+.filter-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.18);
+  opacity: 0.95;
+}
+
+.filter-btn.is-active {
+  background: rgba(161, 0, 255, 0.18);
+  border-color: rgba(161, 0, 255, 0.45);
+  box-shadow: 0 0 24px rgba(161, 0, 255, 0.25);
+}
+
+.filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.filters {
+  color: #ffffff;
+  text-align: left;
+  font-family: Poppins, sans-serif;
+  margin: 0 0 14px 20px;
+}
+/* ===== Filters: keep in one row on mobile ===== */
+
+.filter-btn {
+  flex: 0 0 auto; /* prevent shrinking */
+}
+
+/* ===== Projects card: default desktop look (optional, if not exists) ===== */
+.friendship-block {
+  max-width: 1100px;
+  margin: 36px auto;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+  .projects-filters {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+
+    overflow-x: visible; 
+    padding: 8px 4px 14px;
+    margin-bottom: 26px;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+  }
+
+  .container {
+    width: 92%;
+    margin: 3.5em auto
+  }
+
+  .filters {
+    font-size: 28px;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+ 
+  .friendship-block {
+    border-radius: 16px;
+  }
+
+ 
+  .photo-grid {
+    gap: 10px;
+    padding: 16px;
+  }
+
+  
+  .photo-grid img {
+    max-height: 190px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .friendship-text {
+    padding: 18px 18px 22px;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .friendship-text h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .go_btn {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* filters buttons compact */
+  .filter-btn {
+    padding: 9px 12px;
+    font-size: 14px;
+  }
+  .filter-count {
+    min-width: 24px;
+    height: 20px;
+    font-size: 12px;
+  }
+}
+
+/* ===== Very small screens ===== */
+@media (max-width: 420px) {
+  .friendship-text h2 {
+    font-size: 20px;
+  }
+  .photo-grid img {
+    max-height: 170px;
+  }
+}

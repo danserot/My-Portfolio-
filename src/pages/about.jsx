@@ -1,10 +1,12 @@
 import Header from "../components/header";
 import Footer from "../components/Footer";
+import CursorParticles from "../components/CursorParticles";
 import "../styles/about.css";
 
 export default function About() {
   return (
     <>
+      <CursorParticles />
       <Header />
       <section className="about" id="about">
         <div className="about__container">
