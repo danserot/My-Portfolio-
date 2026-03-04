@@ -32,7 +32,7 @@ export default function container() {
       <div className="buttons">
         <div>
           <a
-            href="https://t.me/@ArtemKhloptsev"
+            href="https://t.me/@Artem_Khloptsev"
             target="_blank"
             rel="noreferrer">
             <button className="button_1">Get in Touch</button>

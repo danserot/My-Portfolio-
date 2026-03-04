@@ -1,70 +1,173 @@
-# Getting Started with Create React App
+# Artem Khloptsev — Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio website showcasing my projects, startup experience, and frontend development skills.
 
-## Available Scripts
+This website was built to present my work, experiments, and commercial projects in a clean, modern interface.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Website:  
+https://artem-khloptsev-portfolio.netlify.app
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## About the Project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This portfolio highlights my work as a **Frontend Developer and Software Engineering student**.
 
-### `npm run build`
+The website contains:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- real commercial projects
+- startup projects
+- experimental and learning projects
+- mini-games and small web applications
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The goal of the website is to present my work, design skills, and development approach.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Featured Projects
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Goleador — Football Store
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Commercial online store specializing in football apparel and sports equipment.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Features:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- responsive e-commerce interface
+- modern product presentation
+- clean UI and navigation
 
-## Learn More
+Website:  
+https://goleador.kz
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Golden Students Club — Startup Platform
 
-### Code Splitting
+Golden Students Club is a startup platform designed to connect students with verified opportunities such as:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- internships
+- scholarships
+- events
+- community networking
 
-### Analyzing the Bundle Size
+This project **won a startup battle among 120 teams from 5 countries.**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Website:  
+https://golden-students-club.netlify.app
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Pomodoro Productivity Timer
 
-### Advanced Configuration
+A productivity web application implementing the **Pomodoro Technique**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Features:
 
-### Deployment
+- 25-minute focus sessions
+- 5-minute breaks
+- long break after 4 cycles
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+### Mini Web Games
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Small browser games created for practice and experimentation:
+
+- Hangman
+- Tic-Tac-Toe
+
+---
+
+## Tech Stack
+
+Frontend:
+
+- React
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Responsive Design
+- Flexbox / Grid
+
+Tools:
+
+- Git
+- GitHub
+- VS Code
+- Figma
+- Netlify
+
+Other technologies used in projects:
+
+- Supabase
+- REST APIs
+- modern UI/UX principles
+
+---
+
+## Website Features
+
+- responsive layout for desktop and mobile devices
+- project filtering system
+- animated UI components
+- optimized images
+- smooth user interface
+- modern dark theme design
+
+---
+
+## Project Structure
+
+src/
+components/
+pages/
+styles/
+
+public/
+Images/
+
+build/
+build/
+
+---
+
+## Installation
+
+Clone the repository:
+
+git clone https://github.com/danserot/portfolio.git
+
+Install dependencies:
+
+npm install
+
+Run the project locally:
+
+npm start
+
+Build production version:
+
+npm run build
+
+---
+
+## Contact
+
+GitHub  
+https://github.com/danserot
+
+LinkedIn  
+https://linkedin.com/ArtemKhloptsev
+
+Telegram  
+https://t.me/@Artem_Khloptsev
+
+---
+
+## Final Note
+
+This portfolio represents my development journey and will continue evolving as I build new projects and improve my skills.

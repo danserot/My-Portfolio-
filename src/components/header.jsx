@@ -41,7 +41,7 @@ export default function Header() {
           <Link to="/">Home</Link>
           <Link to="/projects">Projects</Link>
           <Link to="/about">About</Link>
-          <a href="https://t.me/@ArtemKhloptsev">Contact</a>
+          <a href="https://t.me/@Artem_Khloptsev">Contact</a>
         </nav>
         <div className={`header_text${isOpen ? " open" : ""}`} id="header_text">
           <div className="headerblock">
@@ -55,7 +55,7 @@ export default function Header() {
           </div>
           <div className="headerblock">
             <a
-              href="https://t.me/@ArtemKhloptsev"
+              href="https://t.me/@Artem_Khloptsev"
               target="_blank"
               rel="noreferrer">
               Contact
@@ -64,7 +64,6 @@ export default function Header() {
         </div>
       </div>
       {isOpen && <div className="menu-overlay" onClick={toggleMenu}></div>} ;
-      
     </>
   );
 }
