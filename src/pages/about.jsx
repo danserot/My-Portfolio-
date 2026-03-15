@@ -8,6 +8,7 @@ export default function About() {
     <>
       <CursorParticles />
       <Header />
+
       <section className="about" id="about">
         <div className="about__container">
           <header className="about__header">
@@ -17,6 +18,60 @@ export default function About() {
               player
             </p>
           </header>
+          {/* Experience */}
+          <div className="about__experience">
+            <div className="about__experience-inner">
+              <span className="about__experience-label">Experience</span>
+              <h3 className="about__experience-title">
+                Frontend Developer — NovaTech Studio
+              </h3>
+              <p className="about__experience-meta">
+                1+ year of experience • React • Responsive UI • Production-ready
+                interfaces
+              </p>
+              <p className="about__experience-text">
+                I have over 1 year of frontend development experience building
+                modern web interfaces with React, JavaScript and CSS. I create
+                responsive layouts, reusable components and clean user
+                experiences with strong attention to structure, performance and
+                visual consistency.
+              </p>
+            </div>
+          </div>
+
+          {/* Tech Stack */}
+          <div className="about__stackBlock">
+            <h3 className="about__stackTitle">Tech Stack</h3>
+
+            <div className="about__techGrid">
+              <div className="techCard">
+                <h4>Frontend</h4>
+                <p>
+                  HTML5 • CSS3 • JavaScript (ES6+) • React • Responsive Design
+                </p>
+              </div>
+
+              <div className="techCard">
+                <h4>UI / Styling</h4>
+                <p>
+                  CSS Grid • Flexbox • Animations • Glassmorphism UI • Modern
+                  Layout
+                </p>
+              </div>
+
+              <div className="techCard">
+                <h4>Tools</h4>
+                <p>Git • GitHub • Figma • VS Code • npm</p>
+              </div>
+
+              <div className="techCard">
+                <h4>Other</h4>
+                <p>
+                  REST API • Component Architecture • Performance Optimization
+                </p>
+              </div>
+            </div>
+          </div>
 
           <div className="about__stack">
             {/* 1 */}
