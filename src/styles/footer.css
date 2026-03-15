@@ -47,6 +47,7 @@
   margin: 0 0 10px;
   font-size: 24px;
   color: white;
+  font-family: Poppins, sans-serif;
 }
 
 .footer__left p {
@@ -59,7 +60,6 @@
   font-weight: 500;
 }
 
-/* Social icons */
 .footer__socials {
   display: flex;
   gap: 20px;
@@ -71,21 +71,25 @@
   border-radius: 50%;
   display: grid;
   place-items: center;
-  background: rgba(255, 255, 255, 0.06);
+  background: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  transition: all 0.3s ease;
+  transition:
+    all 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.footer__socials svg {
-  width: 22px;
-  height: 22px;
-  fill: white;
+.footer__socials img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
 }
 
+/* hover */
 .footer__socials a:hover {
-  background: rgba(161, 0, 255, 0.25);
-  box-shadow: 0 0 25px rgba(161, 0, 255, 0.6);
   transform: translateY(-4px);
+  box-shadow: 0 0 25px rgba(161, 0, 255, 0.6);
 }
 
 .footer__bottom {
@@ -93,8 +97,9 @@
   color: #666;
   font-size: 14px;
 }
+
 .footer::before {
-  bottom: -120px; /* уводим вниз */
+  bottom: -120px;
   width: 420px;
   height: 220px;
   filter: blur(90px);
@@ -103,7 +108,7 @@
 
 @media (max-width: 768px) {
   .footer::before {
-    bottom: -120px; /* уводим вниз */
+    bottom: -120px;
     width: 420px;
     height: 220px;
     filter: blur(90px);
