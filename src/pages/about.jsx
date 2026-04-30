@@ -19,7 +19,7 @@ export default function About() {
             </p>
           </header>
           {/* Experience */}
-          <div className="about__experience">
+          {/* <div className="about__experience">
             <div className="about__experience-inner">
               <span className="about__experience-label">Experience</span>
               <h3 className="about__experience-title">
@@ -37,7 +37,7 @@ export default function About() {
                 visual consistency.
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* Tech Stack */}
           <div className="about__stackBlock">

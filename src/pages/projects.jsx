@@ -159,6 +159,27 @@ export default function Projects() {
         ),
         link: "https://majestic-frangollo-c8fcb8.netlify.app/",
       },
+       {
+        id: "monkey",
+        category: "fun",
+        title: "Monkey Bouncer Game",
+        imgs: [
+          "Images/image copy 12.png",
+          "Images/image copy 15.png",
+          "Images/image copy 14.png",
+          "Images/image copy 13.png",
+        ],
+        desc: (
+          <>
+            A simple canvas game where you control a monkey that jumps on
+            platforms and collects bananas. Use the left and right arrow keys (or
+            A/D) to move the monkey and spacebar to jump. The goal is to score
+            as many points as possible!
+
+          </>
+        ),
+        link: "https://majestic-frangollo-c8fcb8.netlify.app/",
+      },
     ],
     [],
   );
