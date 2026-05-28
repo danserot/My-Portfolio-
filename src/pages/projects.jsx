@@ -38,6 +38,26 @@ export default function Projects() {
         ),
         link: "https://goleador.kz/",
       },
+      {
+        id: "autoscout",
+        category: "real",
+        title: "AutoScout — Car Monitoring App",
+        imgs: [
+          "Images/AutoScout(1).png",
+          "Images/AutoScout(2).png",
+          "Images/AutoScout(3).png",
+          "Images/AutoScout(4).png",
+        ],
+        desc: (
+          <>
+            AutoScout is a car monitoring web application that allows users to
+            track and manage their favorite vehicles. The platform provides a
+            user-friendly interface for browsing car listings, saving
+            interesting
+          </>
+        ),
+        link: "https://autoscout-kz.netlify.app/",
+      },
 
       {
         id: "gsc",
@@ -159,7 +179,7 @@ export default function Projects() {
         ),
         link: "https://majestic-frangollo-c8fcb8.netlify.app/",
       },
-       {
+      {
         id: "monkey",
         category: "fun",
         title: "Monkey Bouncer Game",
@@ -172,10 +192,9 @@ export default function Projects() {
         desc: (
           <>
             A simple canvas game where you control a monkey that jumps on
-            platforms and collects bananas. Use the left and right arrow keys (or
-            A/D) to move the monkey and spacebar to jump. The goal is to score
-            as many points as possible!
-
+            platforms and collects bananas. Use the left and right arrow keys
+            (or A/D) to move the monkey and spacebar to jump. The goal is to
+            score as many points as possible!
           </>
         ),
         link: "https://majestic-frangollo-c8fcb8.netlify.app/",
