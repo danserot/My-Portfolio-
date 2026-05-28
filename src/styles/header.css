@@ -1,56 +1,6 @@
-.nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-family: Poppins, sans-serif;
-  font-size: 1.5em;
-  padding: 10px 0;
-}
-
-.hamburger {
-  display: none;
-  font-size: 2em;
-  cursor: pointer;
-}
-
-/* Мобильная версия */
-@media (max-width: 768px) {
-  .nav {
-    text-align: center;
-    display: none;
-    flex-direction: column;
-    background: #444;
-    position: absolute;
-    top: 65px;
-    right: 0px;
-    width: max-content;
-    padding: 10px;
-  }
-  .header {
-    justify-content: space-around;
-  }
-
-  .nav.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
-@media screen and (min-width: 768px) {
-  .nav {
-    display: none;
-  }
-}
 .header {
   background-color: #191919;
-  height: 4em;
+  min-height: 4.5em;
   box-shadow: 0px 4.36364px 16px -2.18182px rgba(0, 0, 0, 0.1);
   width: 100%;
   display: flex;
@@ -58,61 +8,104 @@
   justify-content: space-around;
   align-items: center;
   color: aliceblue;
-  font-family:
-    Plus Jakarta Sans,
-    sans-serif;
+  font-family: Plus Jakarta Sans, sans-serif;
+  padding: 0 24px;
+  box-sizing: border-box;
 }
+
 .headerblock {
   color: aliceblue;
   text-decoration: none;
 }
+
+.headerblock a,
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-family: Poppins, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 10px 0;
+  transition: color 0.2s ease;
+}
+
+.headerblock a:hover,
+.nav a:hover {
+  color: #34d399;
+}
+
+.header_logo {
+  height: 4.5em;
+  display: block;
+}
+
 .header_text {
-  width: 40%;
+  width: min(48%, 620px);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-}
-.header_logo {
-  height: 4.5em;
+  gap: 22px;
 }
 
-.header_text {
+.header_actions {
   display: flex;
+  align-items: center;
+  gap: 14px;
+  order: 3;
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.language-switch button {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: Poppins, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.language-switch button:hover,
+.language-switch button.active {
+  background: #22c55e;
+  color: #08120d;
+}
+
+.language-switch button:hover {
+  transform: translateY(-1px);
 }
 
 .hamburger {
   display: none;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
 }
 
-/* Мобильная версия */
-@media (max-width: 768px) {
-  .header_text {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 28px;
-    cursor: pointer;
-  }
-
-  .nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 20px;
-    background: #191919;
-    padding: 20px;
-    border-radius: 12px;
-    gap: 14px;
-  }
-
-  .nav.active {
-    display: flex;
-  }
+.nav {
+  display: none;
+  z-index: 999;
 }
+
 .menu-overlay {
   position: fixed;
   inset: 0;
@@ -120,7 +113,51 @@
   backdrop-filter: blur(4px);
   z-index: 998;
 }
-.nav {
-  z-index: 999;
-  position: fixed;
+
+@media (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+    min-height: 4.25em;
+    padding: 0 16px;
+  }
+
+  .header_logo {
+    height: 4em;
+  }
+
+  .header_text {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 76px;
+    right: 16px;
+    min-width: 190px;
+    background: #191919;
+    padding: 18px 20px;
+    border-radius: 14px;
+    gap: 12px;
+    text-align: left;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a {
+    font-size: 1.1rem;
+  }
+
+  .language-switch button {
+    padding: 7px 10px;
+    font-size: 0.82rem;
+  }
 }
