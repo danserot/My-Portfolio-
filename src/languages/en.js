@@ -1,0 +1,147 @@
+export const en = {
+  header: {
+    logoAlt: "Artem Khloptsev logo",
+    languageSwitcher: "Language switcher",
+    menuLabel: "Toggle navigation",
+    nav: {
+      home: "Home",
+      projects: "Projects",
+      about: "About",
+      contact: "Contact",
+    },
+  },
+  home: {
+    heroAlt: "Main banner",
+    titleLine: "I do code and",
+    titleAccent: "explore it!",
+    subtitle:
+      "Frontend developer with strong proficiency in HTML5, CSS3, JavaScript (ES6+), and React. Experienced in building scalable, component-based interfaces, working with REST APIs and Supabase for backend integration. Solid foundation in backend fundamentals and object-oriented programming, with hands-on experience developing Java applications using core OOP principles. Focused on clean architecture, performance, and high-quality user experience.",
+    primaryAction: "Get in Touch",
+    secondaryAction: "Download CV",
+    experienceTitle: "EXPERIENCE WITH",
+  },
+  footer: {
+    role: "Frontend Developer • Software Engineering Student",
+    rights: "All rights reserved.",
+  },
+  about: {
+    title: "About me",
+    subtitle:
+      "Frontend developer • Student at Astana IT University • Volleyball player",
+    techTitle: "Tech Stack",
+    techCards: [
+      {
+        title: "Frontend",
+        text: "HTML5 • CSS3 • JavaScript (ES6+) • React • Responsive Design",
+      },
+      {
+        title: "UI / Styling",
+        text: "CSS Grid • Flexbox • Animations • Glassmorphism UI • Modern Layout",
+      },
+      {
+        title: "Tools",
+        text: "Git • GitHub • Figma • VS Code • npm",
+      },
+      {
+        title: "Other",
+        text: "REST API • Component Architecture • Performance Optimization",
+      },
+    ],
+    rows: {
+      frontend: {
+        alt: "Developer",
+        title: "Frontend Development",
+        text: "I build responsive interfaces using React and modern UI principles. Clean code, structured components and production-ready layout.",
+      },
+      volleyball: {
+        alt: "Volleyball",
+        title: "Volleyball",
+        text: "Competitive mindset, discipline and teamwork. Sport keeps my focus sharp and my performance consistent.",
+      },
+      hackathons: {
+        alt: "Hackathon",
+        title: "Hackathons",
+        text: "Participated in startup competitions and won a recent battle. Fast execution and idea validation under pressure.",
+      },
+      startup: {
+        alt: "Award",
+        title: "Startup Battle Winner",
+        text: "Recognition for product thinking and execution. Focus on real-world value and scalable ideas.",
+      },
+      university: {
+        alt: "Astana IT University campus",
+        title: "Astana IT University",
+        text: "I am majoring in Software Engineering at Astana IT University, one of the strongest IT programs in Kazakhstan. The program provides a solid foundation in algorithms, data structures, databases, and modern software development practices.",
+      },
+    },
+  },
+  projects: {
+    title: "My Projects",
+    goToPage: "Go to the page",
+    imageAlt: "project screenshot",
+    filters: {
+      all: "All",
+      real: "Real projects",
+      fun: "For fun",
+      games: "Online games",
+    },
+    items: {
+      goleador: {
+        title: "Goleador — Commercial Football Store",
+        description: [
+          "Goleador is a commercial online store specializing in professional football apparel and sports equipment. The platform presents Kelme collections and other high-quality gear for teams and individual players.",
+          "⚽ Official football kits and training wear.\n🧤 Professional equipment and accessories.\n🛒 Modern, responsive e-commerce interface.",
+          "The website is designed with a clean layout, clear product presentation, and user-friendly navigation to ensure smooth shopping experience across all devices.",
+        ],
+      },
+      autoscout: {
+        title: "AutoScout — Car Monitoring App",
+        description: [
+          "AutoScout is a car monitoring web application that allows users to track and manage their favorite vehicles. The platform provides a user-friendly interface for browsing car listings, saving interesting options, and working with vehicle data.",
+        ],
+      },
+      gsc: {
+        title: "Golden Students Club — Startup Platform",
+        description: [
+          "Golden Students Club is my startup project designed to support ambitious students by connecting them with verified opportunities: scholarships, internships, events, and a community for growth.",
+          "🏆 With this project, I won a startup battle that included 5 countries and 120 teams.\n🚀 Product idea + UI/UX + implementation mindset.\n📌 Built as a modern, responsive web experience.",
+        ],
+      },
+      landing: {
+        title: "Short landing",
+        description: [
+          "My pet project, made for experience and to show my ability to create a landing page.",
+        ],
+      },
+      hangman: {
+        title: "Mini-game (Hangman)",
+        description: ["A short mini game (Hangman / “Виселица”)."],
+      },
+      tictactoe: {
+        title: "Tic-tac-toe",
+        description: ["Classic tic-tac-toe mini game."],
+      },
+      birthday: {
+        title: "Birthday website",
+        description: ["A simple website made for my birthday."],
+      },
+      todo: {
+        title: "To-do website :0",
+        description: ["Minimalistic to-do planner for daily tasks."],
+      },
+      pomodoro: {
+        title: "Pomodoro Technique Timer",
+        description: [
+          "Boost your focus. Beat procrastination. Work smarter — not harder.",
+          "⚡ 25-minute sprints • 🌿 5-minute breaks • 💡 long break after 4 rounds",
+        ],
+      },
+      monkey: {
+        title: "Monkey Bouncer Game",
+        description: [
+          "A simple canvas game where you control a character that jumps on platforms and collects points. Use the left and right arrow keys (or A/D) to move and spacebar to jump. The goal is to score as many points as possible.",
+        ],
+      },
+    },
+  },
+};

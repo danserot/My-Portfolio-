@@ -8,7 +8,9 @@
   justify-content: space-around;
   align-items: center;
   color: aliceblue;
-  font-family: Plus Jakarta Sans, sans-serif;
+  font-family:
+    Plus Jakarta Sans,
+    sans-serif;
   padding: 0 24px;
   box-sizing: border-box;
 }
@@ -31,7 +33,7 @@
 
 .headerblock a:hover,
 .nav a:hover {
-  color: #34d399;
+  color: rgba(191, 191, 191, 0.45);
 }
 
 .header_logo {
@@ -60,9 +62,10 @@
   align-items: center;
   gap: 4px;
   padding: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(161, 0, 255, 0.45);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(161, 0, 255, 0.12);
+  box-shadow: 0 0 22px rgba(161, 0, 255, 0.18);
 }
 
 .language-switch button {
@@ -83,8 +86,9 @@
 
 .language-switch button:hover,
 .language-switch button.active {
-  background: #22c55e;
-  color: #08120d;
+  background: #a100ff;
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(161, 0, 255, 0.42);
 }
 
 .language-switch button:hover {
