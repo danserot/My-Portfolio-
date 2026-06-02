@@ -38,10 +38,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      <div className="footer__bottom">
-        © {new Date().getFullYear()} Artem Khloptsev. {t.footer.rights}
-      </div>
     </footer>
   );
 }
