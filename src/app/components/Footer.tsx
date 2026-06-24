@@ -15,7 +15,11 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <Box as="footer" mt={{ base: "80px", md: "110px" }} mb="100px" px={{ base: "14px", md: 0 }}>
+    <Box
+      as="footer"
+      mt={{ base: "80px", md: "110px" }}
+      px={{ base: "14px", md: 0 }}
+      pb="100px">
       <Flex
         position="relative"
         zIndex="1"
