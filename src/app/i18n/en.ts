@@ -39,22 +39,36 @@ export const en = {
     subtitle:
       "Frontend developer • Student at Astana IT University • Volleyball player",
     techTitle: "Tech Stack",
+    experience: {
+      title: "Work Experience",
+      subtitle: "Frontend development internship",
+      role: "Frontend Developer Intern",
+      company: "Park Technologies",
+      period: "May 2026 — June 30, 2026",
+      location: "Kazakhstan",
+      achievements: [
+        "Built responsive landing pages and product interfaces with React, TypeScript, HTML, and CSS.",
+        "Created reusable UI components and improved page performance across desktop and mobile.",
+        "Integrated REST APIs and delivered maintainable interfaces from idea to production.",
+        "Tested layouts across browsers and improved accessibility and responsive behavior.",
+      ],
+    },
     techCards: [
       {
         title: "Frontend",
-        text: "HTML5 • CSS3 • JavaScript (ES6+) • TypeScript • React • React Native • Expo Router • Responsive Design",
+        text: "HTML5 • CSS3 • JavaScript (ES6+) • React • Responsive Design",
       },
       {
         title: "UI / Styling",
-        text: "CSS Grid • Flexbox • Chakra UI • Tailwind CSS • Animations • Glassmorphism UI • Modern Layout",
+        text: "CSS Grid • Flexbox • Animations • Glassmorphism UI • Modern Layout",
       },
       {
         title: "Tools",
-        text: "Git • GitHub • Figma • VS Code • npm • Expo Go",
+        text: "Git • GitHub • Figma • VS Code • npm",
       },
       {
         title: "Other",
-        text: "REST API • TanStack Query • Zustand • Component Architecture • Performance Optimization",
+        text: "REST API • Component Architecture • Performance Optimization",
       },
     ],
     rows: {
@@ -88,7 +102,42 @@ export const en = {
   projects: {
     title: "My Projects",
     goToPage: "Go to the page",
+    viewDetails: "View case study",
     imageAlt: "project screenshot",
+    detail: {
+      backToProjects: "Back to projects",
+      liveDemo: "Open live demo",
+      sourceCode: "GitHub profile",
+      roleTitle: "My role",
+      stackTitle: "Technology stack",
+      overviewTitle: "Project overview",
+      challengeTitle: "Challenge",
+      approachTitle: "Approach",
+      resultTitle: "Result",
+      galleryTitle: "Interface gallery",
+      notFoundTitle: "Project not found",
+      notFoundText: "The requested project does not exist or its link has changed.",
+      byCategory: {
+        real: {
+          role: "Frontend development, interface architecture, responsive implementation",
+          challenge: "Turn a real product idea into a clear interface that remains stable on different devices and can grow without duplicated UI code.",
+          approach: "I separated the interface into reusable components, established predictable layout rules, and focused on readable states, navigation, and performance.",
+          result: "A production-oriented responsive interface with a consistent component structure and a clear path for future development.",
+        },
+        fun: {
+          role: "Frontend development, UI implementation, interaction design",
+          challenge: "Build a compact project that demonstrates one useful workflow without unnecessary complexity.",
+          approach: "I focused on a small component model, clear state transitions, responsive layout, and immediate feedback for user actions.",
+          result: "A focused working product that demonstrates practical frontend skills and can be extended with new features.",
+        },
+        games: {
+          role: "Game logic, interface development, responsive interaction",
+          challenge: "Keep game state predictable while making controls and feedback understandable on different screen sizes.",
+          approach: "I separated game rules from visual state, handled win and restart flows explicitly, and kept the UI lightweight.",
+          result: "A playable browser game with clear state, responsive controls, and maintainable game logic.",
+        },
+      },
+    },
     filters: {
       all: "All",
       real: "Real projects",
@@ -152,6 +201,40 @@ export const en = {
           "A simple canvas game where you control a character that jumps on platforms and collects points. Use the left and right arrow keys (or A/D) to move and spacebar to jump. The goal is to score as many points as possible.",
         ],
       },
+    },
+  },
+  contact: {
+    title: "Let's work together",
+    subtitle: "Tell me about your product, website, or frontend task. I will reply by email.",
+    nameLabel: "Your name",
+    emailLabel: "Email",
+    messageLabel: "Project details",
+    submitAction: "Send message",
+    privacyNote: "The form is processed securely by Netlify Forms.",
+    successTitle: "Message sent",
+    successText: "Thank you. I received your message and will get back to you shortly.",
+    backHome: "Back to home",
+  },
+  seo: {
+    home: {
+      title: "Artem Khloptsev — Frontend Developer",
+      description: "Frontend developer portfolio: React, TypeScript, Chakra UI, responsive interfaces, and product projects.",
+    },
+    projects: {
+      title: "Projects — Artem Khloptsev",
+      description: "Frontend case studies, commercial interfaces, web applications, and interactive browser projects.",
+    },
+    about: {
+      title: "About — Artem Khloptsev",
+      description: "Experience, technology stack, education, and background of frontend developer Artem Khloptsev.",
+    },
+    resume: {
+      title: "Resume — Artem Khloptsev",
+      description: "View and download Artem Khloptsev's frontend developer resume.",
+    },
+    contact: {
+      title: "Contact — Artem Khloptsev",
+      description: "Contact frontend developer Artem Khloptsev about websites, React interfaces, and product development.",
     },
   },
 };
