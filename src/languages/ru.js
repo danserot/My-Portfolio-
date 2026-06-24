@@ -42,19 +42,19 @@ export const ru = {
     techCards: [
       {
         title: "Frontend",
-        text: "HTML5 • CSS3 • JavaScript (ES6+) • React • адаптивная верстка",
+        text: "HTML5 • CSS3 • JavaScript (ES6+) • TypeScript • React • React Native • Expo Router • адаптивная верстка",
       },
       {
         title: "UI / Стили",
-        text: "CSS Grid • Flexbox • анимации • Glassmorphism UI • современные макеты",
+        text: "CSS Grid • Flexbox • Chakra UI • Tailwind CSS • анимации • Glassmorphism UI • современные макеты",
       },
       {
         title: "Инструменты",
-        text: "Git • GitHub • Figma • VS Code • npm",
+        text: "Git • GitHub • Figma • VS Code • npm • Expo Go",
       },
       {
         title: "Другое",
-        text: "REST API • компонентная архитектура • оптимизация производительности",
+        text: "REST API • TanStack Query • Zustand • компонентная архитектура • оптимизация производительности",
       },
     ],
     rows: {
