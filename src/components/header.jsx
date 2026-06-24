@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { LANGUAGE_OPTIONS, useLanguage } from "../languages";
 import "../styles/header.css";
+
+const getNavLinkClassName = ({ isActive }) =>
+  `header__link${isActive ? " header__link--active" : ""}`;
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,25 +72,41 @@ export default function Header() {
         </div>
 
         <nav className={`nav${isOpen ? " active" : ""}`} id="nav">
-          <Link to="/" onClick={closeMenu}>{labels.home}</Link>
-          <Link to="/projects" onClick={closeMenu}>{labels.projects}</Link>
-          <Link to="/about" onClick={closeMenu}>{labels.about}</Link>
-          <Link to="/resume" onClick={closeMenu}>{labels.resume}</Link>
+          <NavLink to="/" end className={getNavLinkClassName} onClick={closeMenu}>
+            {labels.home}
+          </NavLink>
+          <NavLink to="/projects" className={getNavLinkClassName} onClick={closeMenu}>
+            {labels.projects}
+          </NavLink>
+          <NavLink to="/about" className={getNavLinkClassName} onClick={closeMenu}>
+            {labels.about}
+          </NavLink>
+          <NavLink to="/resume" className={getNavLinkClassName} onClick={closeMenu}>
+            {labels.resume}
+          </NavLink>
           <a href="https://t.me/@Artem_Khloptsev" onClick={closeMenu}>{labels.contact}</a>
         </nav>
 
         <nav className="header_text" id="header_text">
           <div className="headerblock">
-            <Link to="/">{labels.home}</Link>
+            <NavLink to="/" end className={getNavLinkClassName}>
+              {labels.home}
+            </NavLink>
           </div>
           <div className="headerblock">
-            <Link to="/projects">{labels.projects}</Link>
+            <NavLink to="/projects" className={getNavLinkClassName}>
+              {labels.projects}
+            </NavLink>
           </div>
           <div className="headerblock">
-            <Link to="/about">{labels.about}</Link>
+            <NavLink to="/about" className={getNavLinkClassName}>
+              {labels.about}
+            </NavLink>
           </div>
           <div className="headerblock">
-            <Link to="/resume">{labels.resume}</Link>
+            <NavLink to="/resume" className={getNavLinkClassName}>
+              {labels.resume}
+            </NavLink>
           </div>
           <div className="headerblock">
             <a

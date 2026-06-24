@@ -36,6 +36,41 @@
   color: rgba(191, 191, 191, 0.45);
 }
 
+.header__link {
+  position: relative;
+}
+
+.header__link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  left: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: #a100ff;
+  box-shadow: 0 0 12px rgba(161, 0, 255, 0.72);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.header__link:hover::after,
+.header__link--active::after {
+  transform: scaleX(1);
+}
+
+.headerblock a.header__link--active,
+.nav a.header__link--active {
+  color: #ffffff;
+}
+
+.header__link:focus-visible {
+  outline: 2px solid rgba(196, 99, 255, 0.8);
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+
 .header_logo {
   height: 4.5em;
   display: block;
