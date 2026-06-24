@@ -106,10 +106,20 @@ interface TranslationSection {
     emailLabel: string;
     messageLabel: string;
     submitAction: string;
+    submittingAction: string;
+    errorText: string;
     privacyNote: string;
     successTitle: string;
     successText: string;
     backHome: string;
+  };
+  notFound: {
+    eyebrow: string;
+    title: string;
+    text: string;
+    homeAction: string;
+    projectsAction: string;
+    contactAction: string;
   };
   seo: {
     home: { title: string; description: string };

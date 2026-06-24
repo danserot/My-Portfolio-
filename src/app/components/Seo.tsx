@@ -9,6 +9,7 @@ interface SeoProps {
   path: string;
   image?: string;
   jsonLd?: Record<string, unknown>;
+  noIndex?: boolean;
 }
 
 function upsertMeta(selector: string, attribute: "name" | "property", key: string) {
@@ -29,6 +30,7 @@ export default function Seo({
   path,
   image = DEFAULT_IMAGE,
   jsonLd,
+  noIndex = false,
 }: SeoProps) {
   useEffect(() => {
     const canonicalUrl = new URL(path, SITE_URL).toString();
@@ -41,6 +43,9 @@ export default function Seo({
     upsertMeta('meta[property="og:url"]', "property", "og:url").content = canonicalUrl;
     upsertMeta('meta[property="og:image"]', "property", "og:image").content = image;
     upsertMeta('meta[name="twitter:card"]', "name", "twitter:card").content = "summary_large_image";
+    upsertMeta('meta[name="robots"]', "name", "robots").content = noIndex
+      ? "noindex, nofollow"
+      : "index, follow";
 
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
@@ -76,7 +81,7 @@ export default function Seo({
     document.head.appendChild(script);
 
     return () => script.remove();
-  }, [description, image, jsonLd, path, title]);
+  }, [description, image, jsonLd, noIndex, path, title]);
 
   return null;
 }
