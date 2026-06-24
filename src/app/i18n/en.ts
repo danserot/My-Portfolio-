@@ -210,10 +210,20 @@ export const en = {
     emailLabel: "Email",
     messageLabel: "Project details",
     submitAction: "Send message",
+    submittingAction: "Sending...",
+    errorText: "The form could not be sent. Try again or email me directly:",
     privacyNote: "The form is processed securely by Netlify Forms.",
     successTitle: "Message sent",
     successText: "Thank you. I received your message and will get back to you shortly.",
     backHome: "Back to home",
+  },
+  notFound: {
+    eyebrow: "Navigation error",
+    title: "This page got lost in the code",
+    text: "The link may be outdated or the address may contain a typo. Choose one of the available routes.",
+    homeAction: "Back home",
+    projectsAction: "View projects",
+    contactAction: "Contact me",
   },
   seo: {
     home: {
