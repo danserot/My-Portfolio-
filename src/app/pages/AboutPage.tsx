@@ -1,5 +1,8 @@
 import { Box, Grid, Heading, Image, SimpleGrid, Text } from "@chakra-ui/react";
+import ExperienceSection from "../components/ExperienceSection";
 import PageShell from "../components/PageShell";
+import Reveal from "../components/Reveal";
+import Seo from "../components/Seo";
 import { useLanguage } from "../i18n/context";
 import type { AboutRowId } from "../i18n/types";
 
@@ -30,6 +33,7 @@ export default function AboutPage() {
 
   return (
     <PageShell>
+      <Seo title={t.seo.about.title} description={t.seo.about.description} path="/about" />
       <Box as="main" id="about" py={{ base: "64px", md: "90px" }} color="aliceblue">
         <Box w="min(1100px, 92%)" mx="auto">
           <Box as="header" mb="34px" textAlign="center">
@@ -41,7 +45,9 @@ export default function AboutPage() {
             </Text>
           </Box>
 
-          <Box my="60px" mb="70px" textAlign="center">
+          <ExperienceSection experience={about.experience} />
+
+          <Reveal my="60px" mb="70px" textAlign="center">
             <Heading as="h2" mb="32px" fontSize="32px" fontWeight="800">
               {about.techTitle}
             </Heading>
@@ -50,19 +56,23 @@ export default function AboutPage() {
                 <Box
                   key={card.title}
                   {...glassPanelStyles}
+                  minH="158px"
                   p="26px"
+                  display="flex"
+                  flexDirection="column"
+                  justifyContent="center"
                   transition="transform 0.25s ease, border-color 0.25s ease"
                   _hover={{ transform: "translateY(-4px)", borderColor: "rgba(161, 0, 255, 0.4)" }}>
                   <Heading as="h3" mb="12px" fontSize="18px" fontWeight="700">
                     {card.title}
                   </Heading>
-                  <Text fontSize="15px" lineHeight="1.6" opacity="0.85">
+                  <Text fontSize="14px" lineHeight="1.65" color="rgba(255, 255, 255, 0.76)">
                     {card.text}
                   </Text>
                 </Box>
               ))}
             </SimpleGrid>
-          </Box>
+          </Reveal>
 
           <Box display="flex" flexDirection="column" gap="60px">
             {ABOUT_MEDIA.map((item) => {
@@ -71,7 +81,8 @@ export default function AboutPage() {
               const contentOrder = item.reverse ? { base: 1, md: 1 } : 1;
 
               return (
-                <Grid key={item.id} templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={{ base: "22px", md: "40px" }} alignItems="center">
+                <Reveal key={item.id}>
+                <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={{ base: "22px", md: "40px" }} alignItems="center">
                   <Box order={mediaOrder}>
                     <Image
                       src={item.src}
@@ -93,6 +104,7 @@ export default function AboutPage() {
                     </Text>
                   </Box>
                 </Grid>
+                </Reveal>
               );
             })}
           </Box>

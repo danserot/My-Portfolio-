@@ -9,120 +9,15 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { useMemo, useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
 import PageShell from "../components/PageShell";
+import Reveal from "../components/Reveal";
+import Seo from "../components/Seo";
+import { PROJECT_FILTERS, PROJECTS } from "../data/projects";
 import { useLanguage } from "../i18n/context";
 import type {
-  ProjectCategory,
   ProjectFilter,
-  ProjectId,
 } from "../i18n/types";
-
-interface ProjectDefinition {
-  id: ProjectId;
-  category: ProjectCategory;
-  imgs: readonly string[];
-  link: string;
-}
-
-const PROJECTS: readonly ProjectDefinition[] = [
-  {
-    id: "goleador",
-    category: "real",
-    imgs: ["/Images/kelme1.png", "/Images/kelme2.png", "/Images/kelme3.png", "/Images/kelme4.png"],
-    link: "https://goleador.kz/",
-  },
-  {
-    id: "autoscout",
-    category: "real",
-    imgs: [
-      "/Images/AutoScout(1).png",
-      "/Images/AutoScout(2).png",
-      "/Images/AutoScout(3).png",
-      "/Images/AutoScout(4).png",
-    ],
-    link: "https://autoscout-kz.netlify.app/",
-  },
-  {
-    id: "gsc",
-    category: "real",
-    imgs: ["/Images/gsc1.png", "/Images/gsc2.png", "/Images/gsc3.png", "/Images/gsc4.png"],
-    link: "https://golden-students-club.netlify.app/",
-  },
-  {
-    id: "landing",
-    category: "fun",
-    imgs: [
-      "/Images/Снимок экрана 2025-06-20 084501.png",
-      "/Images/Снимок экрана 2025-06-20 084543.png",
-      "/Images/Снимок экрана 2025-06-20 084625.png",
-      "/Images/Снимок экрана 2025-06-20 084655.png",
-    ],
-    link: "https://frolicking-semolina-de0ae3.netlify.app/",
-  },
-  {
-    id: "hangman",
-    category: "games",
-    imgs: ["/Images/game1.png", "/Images/game2.png", "/Images/game3.png", "/Images/game4.png"],
-    link: "https://timely-fox-75efdb.netlify.app/",
-  },
-  {
-    id: "tictactoe",
-    category: "games",
-    imgs: [
-      "/Images/image.png",
-      "/Images/image copy 2.png",
-      "/Images/image copy 3.png",
-      "/Images/image copy.png",
-    ],
-    link: "https://polite-mermaid-22cba4.netlify.app/",
-  },
-  {
-    id: "birthday",
-    category: "fun",
-    imgs: [
-      "/Images/image copy 4.png",
-      "/Images/image copy 5.png",
-      "/Images/image copy 6.png",
-      "/Images/image copy 7.png",
-    ],
-    link: "https://stalwart-kataifi-9dc8fb.netlify.app/",
-  },
-  {
-    id: "todo",
-    category: "fun",
-    imgs: [
-      "/Images/image copy 8.png",
-      "/Images/image copy 11.png",
-      "/Images/image copy 10.png",
-      "/Images/image copy 9.png",
-    ],
-    link: "https://incandescent-starburst-447285.netlify.app/",
-  },
-  {
-    id: "pomodoro",
-    category: "fun",
-    imgs: [
-      "/Images/image copy 12.png",
-      "/Images/image copy 15.png",
-      "/Images/image copy 14.png",
-      "/Images/image copy 13.png",
-    ],
-    link: "https://majestic-frangollo-c8fcb8.netlify.app/",
-  },
-  {
-    id: "monkey",
-    category: "fun",
-    imgs: [
-      "/Images/image copy 12.png",
-      "/Images/image copy 15.png",
-      "/Images/image copy 14.png",
-      "/Images/image copy 13.png",
-    ],
-    link: "https://majestic-frangollo-c8fcb8.netlify.app/",
-  },
-];
-
-const FILTERS: readonly ProjectFilter[] = ["all", "real", "fun", "games"];
 
 function ProjectDescription({ paragraphs }: { paragraphs: readonly string[] }) {
   return (
@@ -174,13 +69,14 @@ export default function ProjectsPage() {
 
   return (
     <PageShell>
+      <Seo title={t.seo.projects.title} description={t.seo.projects.description} path="/projects" />
       <Box as="main" w="min(1100px, 92%)" mx="auto" my={{ base: "56px", md: "80px" }}>
         <Heading as="h1" mb="18px" color="white" fontSize={{ base: "28px", md: "36px" }} fontWeight="800" textAlign={{ base: "center", md: "left" }}>
           {t.projects.title}
         </Heading>
 
         <Flex mb="30px" justify="center" align="center" gap="14px" wrap="wrap">
-          {FILTERS.map((name) => {
+          {PROJECT_FILTERS.map((name) => {
             const isActive = filter === name;
 
             return (
@@ -224,9 +120,10 @@ export default function ProjectsPage() {
           })}
         </Flex>
 
-        {filteredProjects.map((project) => (
-          <Box
+        {filteredProjects.map((project, projectIndex) => (
+          <Reveal
             key={project.id}
+            delay={(projectIndex % 3) * 70}
             maxW="1100px"
             mx="auto"
             my="36px"
@@ -236,7 +133,7 @@ export default function ProjectsPage() {
             borderRadius="16px"
             boxShadow="0 8px 16px rgba(0, 0, 0, 0.1)">
             <SimpleGrid columns={{ base: 1, sm: 2 }} gap="10px" p={{ base: "16px", md: "20px" }}>
-              {project.imgs.map((src, index) => (
+              {project.images.map((src, index) => (
                 <Image
                   key={src}
                   src={src}
@@ -254,8 +151,22 @@ export default function ProjectsPage() {
                 {project.title}
               </Heading>
               <ProjectDescription paragraphs={project.description} />
+              <Flex gap="12px" wrap="wrap">
+                <Button
+                  asChild
+                  h="48px"
+                  px="22px"
+                  borderRadius="full"
+                  bg="#a100ff"
+                  color="white"
+                  fontWeight="700"
+                  _hover={{ bg: "#b52bff", transform: "translateY(-2px)" }}>
+                  <RouterLink to={`/projects/${project.id}`}>
+                    {t.projects.viewDetails}
+                  </RouterLink>
+                </Button>
               <Link
-                href={project.link}
+                href={project.liveUrl}
                 target="_blank"
                 rel="noreferrer"
                 display="inline-flex"
@@ -275,8 +186,9 @@ export default function ProjectsPage() {
                 _hover={{ transform: "translateY(-2px)", boxShadow: "0 10px 24px rgba(0, 0, 0, 0.25)" }}>
                 {t.projects.goToPage}
               </Link>
+              </Flex>
             </Box>
-          </Box>
+          </Reveal>
         ))}
       </Box>
     </PageShell>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://artem-khloptsev-portfolio.netlify.app/sitemap.xml

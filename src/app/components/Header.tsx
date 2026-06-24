@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Link as ChakraLink } from "@chakra-ui/react";
+import { Box, Button, Flex, Image } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link as RouterLink, NavLink } from "react-router-dom";
 import { useLanguage } from "../i18n/context";
@@ -153,18 +153,7 @@ export default function Header() {
           <NavItem to="/projects" label={labels.projects} />
           <NavItem to="/about" label={labels.about} />
           <NavItem to="/resume" label={labels.resume} />
-          <ChakraLink
-            href="https://t.me/@Artem_Khloptsev"
-            target="_blank"
-            rel="noreferrer"
-            color="white"
-            fontSize="1.25rem"
-            fontWeight="700"
-            py="10px"
-            textDecoration="none"
-            _hover={{ color: "rgba(255, 255, 255, 0.62)" }}>
-            {labels.contact}
-          </ChakraLink>
+          <NavItem to="/contact" label={labels.contact} />
         </Flex>
 
         <Flex align="center" gap={{ base: "8px", md: "14px" }}>
@@ -207,9 +196,7 @@ export default function Header() {
           <NavItem to="/projects" label={labels.projects} onClick={closeMenu} />
           <NavItem to="/about" label={labels.about} onClick={closeMenu} />
           <NavItem to="/resume" label={labels.resume} onClick={closeMenu} />
-          <ChakraLink href="https://t.me/@Artem_Khloptsev" color="white" fontSize="1.1rem" fontWeight="700" py="10px" textDecoration="none">
-            {labels.contact}
-          </ChakraLink>
+          <NavItem to="/contact" label={labels.contact} onClick={closeMenu} />
         </Flex>
       </Flex>
 

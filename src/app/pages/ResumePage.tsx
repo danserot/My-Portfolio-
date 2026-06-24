@@ -8,6 +8,7 @@ import {
   chakra,
 } from "@chakra-ui/react";
 import PageShell from "../components/PageShell";
+import Seo from "../components/Seo";
 import { useLanguage } from "../i18n/context";
 
 const RESUME_PATH = "/Artem%20Khloptsev%20CV.pdf";
@@ -60,6 +61,7 @@ export default function ResumePage() {
 
   return (
     <PageShell>
+      <Seo title={t.seo.resume.title} description={t.seo.resume.description} path="/resume" />
       <Box as="main" w="min(1180px, calc(100% - 24px))" mx="auto" pt={{ base: "34px", md: "44px", lg: "64px" }}>
         <Flex as="header" mb={{ base: "20px", md: "28px" }} direction={{ base: "column", lg: "row" }} align={{ base: "flex-start", lg: "flex-end" }} justify="space-between" gap={{ base: "24px", lg: "40px" }}>
           <Box>
