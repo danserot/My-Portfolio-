@@ -7,6 +7,7 @@ export const ru = {
       home: "Главная",
       projects: "Проекты",
       about: "Обо мне",
+      resume: "Резюме",
       contact: "Контакты",
     },
   },
@@ -17,8 +18,17 @@ export const ru = {
     subtitle:
       "Frontend-разработчик с уверенными знаниями HTML5, CSS3, JavaScript (ES6+) и React. Создаю масштабируемые компонентные интерфейсы, работаю с REST API и Supabase для backend-интеграций. Имею базу в backend-разработке и ООП, а также практический опыт разработки Java-приложений. Фокусируюсь на чистой архитектуре, производительности и качественном пользовательском опыте.",
     primaryAction: "Связаться",
-    secondaryAction: "Скачать CV",
+    secondaryAction: "Посмотреть CV",
     experienceTitle: "ОПЫТ С",
+  },
+  resume: {
+    title: "Резюме",
+    subtitle: "Опыт, образование и технические навыки в удобном веб-просмотре.",
+    downloadAction: "Скачать PDF",
+    openAction: "Открыть в новой вкладке",
+    viewerTitle: "Резюме Артема Хлопцева",
+    fallback:
+      "Ваш браузер не может показать PDF на этой странице. Откройте его в новой вкладке или скачайте файл.",
   },
   footer: {
     role: "Frontend-разработчик • студент Software Engineering",

@@ -7,6 +7,7 @@ export const en = {
       home: "Home",
       projects: "Projects",
       about: "About",
+      resume: "Resume",
       contact: "Contact",
     },
   },
@@ -17,8 +18,17 @@ export const en = {
     subtitle:
       "Frontend developer with strong proficiency in HTML5, CSS3, JavaScript (ES6+), and React. Experienced in building scalable, component-based interfaces, working with REST APIs and Supabase for backend integration. Solid foundation in backend fundamentals and object-oriented programming, with hands-on experience developing Java applications using core OOP principles. Focused on clean architecture, performance, and high-quality user experience.",
     primaryAction: "Get in Touch",
-    secondaryAction: "Download CV",
+    secondaryAction: "View CV",
     experienceTitle: "EXPERIENCE WITH",
+  },
+  resume: {
+    title: "Resume",
+    subtitle: "View my experience, education, and technical skills online.",
+    downloadAction: "Download PDF",
+    openAction: "Open in new tab",
+    viewerTitle: "Artem Khloptsev resume",
+    fallback:
+      "Your browser cannot display the PDF here. Open it in a new tab or download the file.",
   },
   footer: {
     role: "Frontend Developer • Software Engineering Student",

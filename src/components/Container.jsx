@@ -1,6 +1,7 @@
 import "../styles/container.css";
 import FlipPhoto from "./FlipPhoto";
 import { useLanguage } from "../languages";
+import { Link } from "react-router-dom";
 
 export default function Container() {
   const { t } = useLanguage();
@@ -35,9 +36,9 @@ export default function Container() {
           </a>
         </div>
         <div>
-          <a href="./Artem Khloptsev CV.pdf" download="Artem Khloptsev CV">
+          <Link to="/resume">
             <button className="button_2">{home.secondaryAction}</button>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="experience">

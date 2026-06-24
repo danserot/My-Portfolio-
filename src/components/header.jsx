@@ -60,7 +60,11 @@ export default function Header() {
             onClick={toggleMenu}
             aria-label={t.header.menuLabel}
             aria-expanded={isOpen}>
-            ☰
+            <span className="hamburger__icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
           </button>
         </div>
 
@@ -68,6 +72,7 @@ export default function Header() {
           <Link to="/" onClick={closeMenu}>{labels.home}</Link>
           <Link to="/projects" onClick={closeMenu}>{labels.projects}</Link>
           <Link to="/about" onClick={closeMenu}>{labels.about}</Link>
+          <Link to="/resume" onClick={closeMenu}>{labels.resume}</Link>
           <a href="https://t.me/@Artem_Khloptsev" onClick={closeMenu}>{labels.contact}</a>
         </nav>
 
@@ -80,6 +85,9 @@ export default function Header() {
           </div>
           <div className="headerblock">
             <Link to="/about">{labels.about}</Link>
+          </div>
+          <div className="headerblock">
+            <Link to="/resume">{labels.resume}</Link>
           </div>
           <div className="headerblock">
             <a
