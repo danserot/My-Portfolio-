@@ -1,39 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { LANGUAGE_OPTIONS, useLanguage } from "../languages";
 import "../styles/header.css";
 
-const LANG_STORAGE_KEY = "artem-khloptsev-language";
-
-const NAV_LABELS = {
-  en: {
-    home: "Home",
-    projects: "Projects",
-    about: "About",
-    contact: "Contact",
-  },
-  ru: {
-    home: "Главная",
-    projects: "Проекты",
-    about: "Обо мне",
-    contact: "Контакты",
-  },
-};
-
-function getInitialLanguage() {
-  if (typeof window === "undefined") return "en";
-
-  const savedLanguage = window.localStorage.getItem(LANG_STORAGE_KEY);
-  if (savedLanguage === "ru" || savedLanguage === "en") {
-    return savedLanguage;
-  }
-
-  return window.navigator.language?.toLowerCase().startsWith("ru") ? "ru" : "en";
-}
+const getNavLinkClassName = ({ isActive }) =>
+  `header__link${isActive ? " header__link--active" : ""}`;
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [language, setLanguage] = useState(getInitialLanguage);
-  const labels = NAV_LABELS[language];
+  const { language, setLanguage, t } = useLanguage();
+  const labels = t.header.nav;
 
   const toggleMenu = () => {
     setIsOpen((prev) => !prev);
@@ -41,11 +17,6 @@ export default function Header() {
 
   const closeMenu = () => {
     setIsOpen(false);
-  };
-
-  const changeLanguage = (nextLanguage) => {
-    setLanguage(nextLanguage);
-    window.localStorage.setItem(LANG_STORAGE_KEY, nextLanguage);
   };
 
   useEffect(() => {
@@ -57,21 +28,17 @@ export default function Header() {
   }, [isOpen]);
 
   const languageSwitch = (
-    <div className="language-switch" aria-label="Language switcher">
-      <button
-        type="button"
-        className={language === "ru" ? "active" : ""}
-        onClick={() => changeLanguage("ru")}
-        aria-pressed={language === "ru"}>
-        RU
-      </button>
-      <button
-        type="button"
-        className={language === "en" ? "active" : ""}
-        onClick={() => changeLanguage("en")}
-        aria-pressed={language === "en"}>
-        EN
-      </button>
+    <div className="language-switch" aria-label={t.header.languageSwitcher}>
+      {LANGUAGE_OPTIONS.map((option) => (
+        <button
+          type="button"
+          key={option}
+          className={language === option ? "active" : ""}
+          onClick={() => setLanguage(option)}
+          aria-pressed={language === option}>
+          {option.toUpperCase()}
+        </button>
+      ))}
     </div>
   );
 
@@ -83,7 +50,7 @@ export default function Header() {
             <img
               className="header_logo"
               src="Images/sign-removebg-preview.png"
-              alt="Artem Khloptsev logo"
+              alt={t.header.logoAlt}
             />
           </Link>
         </div>
@@ -94,28 +61,52 @@ export default function Header() {
             className={`hamburger ${isOpen ? "active" : ""}`}
             type="button"
             onClick={toggleMenu}
-            aria-label="Toggle navigation"
+            aria-label={t.header.menuLabel}
             aria-expanded={isOpen}>
-            ☰
+            <span className="hamburger__icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
           </button>
         </div>
 
         <nav className={`nav${isOpen ? " active" : ""}`} id="nav">
-          <Link to="/" onClick={closeMenu}>{labels.home}</Link>
-          <Link to="/projects" onClick={closeMenu}>{labels.projects}</Link>
-          <Link to="/about" onClick={closeMenu}>{labels.about}</Link>
+          <NavLink to="/" end className={getNavLinkClassName} onClick={closeMenu}>
+            {labels.home}
+          </NavLink>
+          <NavLink to="/projects" className={getNavLinkClassName} onClick={closeMenu}>
+            {labels.projects}
+          </NavLink>
+          <NavLink to="/about" className={getNavLinkClassName} onClick={closeMenu}>
+            {labels.about}
+          </NavLink>
+          <NavLink to="/resume" className={getNavLinkClassName} onClick={closeMenu}>
+            {labels.resume}
+          </NavLink>
           <a href="https://t.me/@Artem_Khloptsev" onClick={closeMenu}>{labels.contact}</a>
         </nav>
 
         <nav className="header_text" id="header_text">
           <div className="headerblock">
-            <Link to="/">{labels.home}</Link>
+            <NavLink to="/" end className={getNavLinkClassName}>
+              {labels.home}
+            </NavLink>
           </div>
           <div className="headerblock">
-            <Link to="/projects">{labels.projects}</Link>
+            <NavLink to="/projects" className={getNavLinkClassName}>
+              {labels.projects}
+            </NavLink>
           </div>
           <div className="headerblock">
-            <Link to="/about">{labels.about}</Link>
+            <NavLink to="/about" className={getNavLinkClassName}>
+              {labels.about}
+            </NavLink>
+          </div>
+          <div className="headerblock">
+            <NavLink to="/resume" className={getNavLinkClassName}>
+              {labels.resume}
+            </NavLink>
           </div>
           <div className="headerblock">
             <a

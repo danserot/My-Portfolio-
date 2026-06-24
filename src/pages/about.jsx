@@ -1,9 +1,21 @@
 import Header from "../components/header";
 import Footer from "../components/Footer";
 import CursorParticles from "../components/CursorParticles";
+import { useLanguage } from "../languages";
 import "../styles/about.css";
 
+const ABOUT_MEDIA = [
+  { id: "frontend", src: "/Images/developer.jpg" },
+  { id: "volleyball", src: "/Images/volley.jpg", reverse: true },
+  { id: "hackathons", src: "/Images/hacaton.jpg" },
+  { id: "startup", src: "/Images/aword.jpg", reverse: true },
+  { id: "university", src: "/Images/aitu.jpg" },
+];
+
 export default function About() {
+  const { t } = useLanguage();
+  const about = t.about;
+
   return (
     <>
       <CursorParticles />
@@ -12,140 +24,41 @@ export default function About() {
       <section className="about" id="about">
         <div className="about__container">
           <header className="about__header">
-            <h2 className="about__title">About me</h2>
-            <p className="about__subtitle">
-              Frontend developer • Student at Astana IT University • Volleyball
-              player
-            </p>
+            <h2 className="about__title">{about.title}</h2>
+            <p className="about__subtitle">{about.subtitle}</p>
           </header>
-          {/* Experience */}
-          {/* <div className="about__experience">
-            <div className="about__experience-inner">
-              <span className="about__experience-label">Experience</span>
-              <h3 className="about__experience-title">
-                Frontend Developer — NovaTech Studio
-              </h3>
-              <p className="about__experience-meta">
-                1+ year of experience • React • Responsive UI • Production-ready
-                interfaces
-              </p>
-              <p className="about__experience-text">
-                I have over 1 year of frontend development experience building
-                modern web interfaces with React, JavaScript and CSS. I create
-                responsive layouts, reusable components and clean user
-                experiences with strong attention to structure, performance and
-                visual consistency.
-              </p>
-            </div>
-          </div> */}
 
-          {/* Tech Stack */}
           <div className="about__stackBlock">
-            <h3 className="about__stackTitle">Tech Stack</h3>
+            <h3 className="about__stackTitle">{about.techTitle}</h3>
 
             <div className="about__techGrid">
-              <div className="techCard">
-                <h4>Frontend</h4>
-                <p>
-                  HTML5 • CSS3 • JavaScript (ES6+) • React • Responsive Design
-                </p>
-              </div>
-
-              <div className="techCard">
-                <h4>UI / Styling</h4>
-                <p>
-                  CSS Grid • Flexbox • Animations • Glassmorphism UI • Modern
-                  Layout
-                </p>
-              </div>
-
-              <div className="techCard">
-                <h4>Tools</h4>
-                <p>Git • GitHub • Figma • VS Code • npm</p>
-              </div>
-
-              <div className="techCard">
-                <h4>Other</h4>
-                <p>
-                  REST API • Component Architecture • Performance Optimization
-                </p>
-              </div>
+              {about.techCards.map((card) => (
+                <div className="techCard" key={card.title}>
+                  <h4>{card.title}</h4>
+                  <p>{card.text}</p>
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="about__stack">
-            {/* 1 */}
-            <div className="about__row">
-              <div className="about__media">
-                <img src="/images/developer.jpg" alt="Developer" />
-              </div>
-              <div className="about__content">
-                <h3>Frontend Development</h3>
-                <p>
-                  I build responsive interfaces using React and modern UI
-                  principles. Clean code, structured components and
-                  production-ready layout.
-                </p>
-              </div>
-            </div>
+            {ABOUT_MEDIA.map((item) => {
+              const row = about.rows[item.id];
 
-            {/* 2 */}
-            <div className="about__row about__row--reverse">
-              <div className="about__media">
-                <img src="/images/volley.jpg" alt="Volleyball" />
-              </div>
-              <div className="about__content">
-                <h3>Volleyball</h3>
-                <p>
-                  Competitive mindset, discipline and teamwork. Sport keeps my
-                  focus sharp and my performance consistent.
-                </p>
-              </div>
-            </div>
-
-            {/* 3 */}
-            <div className="about__row">
-              <div className="about__media">
-                <img src="/images/hacaton.jpg" alt="Hackathon" />
-              </div>
-              <div className="about__content">
-                <h3>Hackathons</h3>
-                <p>
-                  Participated in startup competitions and won a recent battle.
-                  Fast execution and idea validation under pressure.
-                </p>
-              </div>
-            </div>
-
-            {/* 4 */}
-            <div className="about__row about__row--reverse">
-              <div className="about__media">
-                <img src="/Images/aword.jpg" alt="Award" />
-              </div>
-              <div className="about__content">
-                <h3>Startup Battle Winner</h3>
-                <p>
-                  Recognition for product thinking and execution. Focus on
-                  real-world value and scalable ideas.
-                </p>
-              </div>
-            </div>
-
-            {/* 5 */}
-            <div className="about__row ">
-              <div className="about__media">
-                <img src="/images/aitu.jpg" alt="Astana IT University campus" />
-              </div>
-              <div className="about__content">
-                <h3>Astana IT University</h3>
-                <p>
-                  I am majoring in Software Engineering at Astana IT University,
-                  one of the strongest IT programs in Kazakhstan. The program
-                  provides a solid foundation in algorithms, data structures,
-                  databases, and modern software development practices.
-                </p>
-              </div>
-            </div>
+              return (
+                <div
+                  className={`about__row${item.reverse ? " about__row--reverse" : ""}`}
+                  key={item.id}>
+                  <div className="about__media">
+                    <img src={item.src} alt={row.alt} />
+                  </div>
+                  <div className="about__content">
+                    <h3>{row.title}</h3>
+                    <p>{row.text}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
