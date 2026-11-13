@@ -45,6 +45,7 @@ export default function ProjectDetailsPage() {
   const projectText = t.projects.items[project.id];
   const categoryDetail = t.projects.detail.byCategory[project.category];
   const seoDescription = projectText.description[0];
+  const projectImage = project.images[0] ? `${SITE_URL}${project.images[0]}` : undefined;
 
   return (
     <PageShell>
@@ -52,14 +53,14 @@ export default function ProjectDetailsPage() {
         title={`${projectText.title} — Artem Khloptsev`}
         description={seoDescription}
         path={`/projects/${project.id}`}
-        image={`${SITE_URL}${project.images[0]}`}
+        image={projectImage}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "CreativeWork",
           name: projectText.title,
           description: seoDescription,
           url: `${SITE_URL}/projects/${project.id}`,
-          image: `${SITE_URL}${project.images[0]}`,
+          ...(projectImage ? { image: projectImage } : {}),
           author: { "@type": "Person", name: "Artem Khloptsev" },
         }}
       />
@@ -70,6 +71,7 @@ export default function ProjectDetailsPage() {
         </Button>
 
         <Reveal>
+          <Text mb="14px" color="#deb0ff" fontWeight="700">{t.projects.filters[project.category]}</Text>
           <Heading as="h1" maxW="900px" fontSize={{ base: "36px", md: "58px" }} lineHeight="1.08" fontWeight="800">
             {projectText.title}
           </Heading>
@@ -77,19 +79,21 @@ export default function ProjectDetailsPage() {
             {seoDescription}
           </Text>
           <Flex mt="28px" gap="12px" wrap="wrap">
-            <Link href={project.liveUrl} target="_blank" rel="noreferrer" px="22px" py="12px" bg="#a100ff" color="white" borderRadius="full" fontWeight="700" textDecoration="none" _hover={{ bg: "#b52bff" }}>
+            {project.liveUrl && <Link href={project.liveUrl} target="_blank" rel="noreferrer" px="22px" py="12px" bg="#a100ff" color="white" borderRadius="full" fontWeight="700" textDecoration="none" _hover={{ bg: "#b52bff" }}>
               {t.projects.detail.liveDemo}
-            </Link>
-            <Link href={project.sourceUrl} target="_blank" rel="noreferrer" px="22px" py="12px" border="1px solid rgba(255, 255, 255, 0.2)" color="white" borderRadius="full" fontWeight="700" textDecoration="none" _hover={{ borderColor: "#a100ff" }}>
+            </Link>}
+            {project.sourceUrl && <Link href={project.sourceUrl} target="_blank" rel="noreferrer" px="22px" py="12px" border="1px solid rgba(255, 255, 255, 0.2)" color="white" borderRadius="full" fontWeight="700" textDecoration="none" _hover={{ borderColor: "#a100ff" }}>
               {t.projects.detail.sourceCode}
-            </Link>
+            </Link>}
           </Flex>
         </Reveal>
 
         <SimpleGrid columns={{ base: 1, md: 2 }} gap="20px" my={{ base: "42px", md: "58px" }}>
           <Reveal {...detailPanelStyles}>
-            <Heading as="h2" mb="16px" fontSize="20px">{t.projects.detail.roleTitle}</Heading>
-            <Text color="rgba(255, 255, 255, 0.75)" lineHeight="1.7">{categoryDetail.role}</Text>
+            <Heading as="h2" mb="16px" fontSize="20px">{t.projects.detail.overviewTitle}</Heading>
+            {projectText.description.map((paragraph) => (
+              <Text key={paragraph} mb="12px" color="rgba(255, 255, 255, 0.75)" lineHeight="1.7" whiteSpace="pre-line">{paragraph}</Text>
+            ))}
           </Reveal>
           <Reveal {...detailPanelStyles} delay={80}>
             <Heading as="h2" mb="18px" fontSize="20px">{t.projects.detail.stackTitle}</Heading>
@@ -97,7 +101,7 @@ export default function ProjectDetailsPage() {
           </Reveal>
         </SimpleGrid>
 
-        <SimpleGrid columns={{ base: 1, lg: 3 }} gap="18px" mb={{ base: "52px", md: "72px" }}>
+        {project.hasCaseStudy !== false && categoryDetail && <SimpleGrid columns={{ base: 1, lg: 3 }} gap="18px" mb={{ base: "52px", md: "72px" }}>
           {[
             [t.projects.detail.challengeTitle, categoryDetail.challenge],
             [t.projects.detail.approachTitle, categoryDetail.approach],
@@ -108,16 +112,16 @@ export default function ProjectDetailsPage() {
               <Text color="rgba(255, 255, 255, 0.72)" lineHeight="1.72">{content}</Text>
             </Reveal>
           ))}
-        </SimpleGrid>
+        </SimpleGrid>}
 
-        <Reveal>
+        {project.images.length > 0 && <Reveal>
           <Heading as="h2" mb="24px" fontSize={{ base: "28px", md: "34px" }}>{t.projects.detail.galleryTitle}</Heading>
           <SimpleGrid columns={{ base: 1, md: 2 }} gap="16px">
             {project.images.map((image, index) => (
-              <Image key={image} src={image} alt={`${projectText.title} — ${t.projects.imageAlt} ${index + 1}`} w="full" h={{ base: "220px", md: "320px" }} objectFit="cover" borderRadius="18px" border="1px solid rgba(255, 255, 255, 0.08)" />
+              <Image key={image} src={image} alt={`${projectText.title} — ${t.projects.imageAlt} ${index + 1}`} loading="lazy" decoding="async" w="full" h={{ base: "220px", md: "320px" }} objectFit="cover" borderRadius="18px" border="1px solid rgba(255, 255, 255, 0.08)" />
             ))}
           </SimpleGrid>
-        </Reveal>
+        </Reveal>}
       </Box>
     </PageShell>
   );

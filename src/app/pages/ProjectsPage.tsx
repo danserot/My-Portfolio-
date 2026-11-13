@@ -13,6 +13,7 @@ import { Link as RouterLink } from "react-router-dom";
 import PageShell from "../components/PageShell";
 import Reveal from "../components/Reveal";
 import Seo from "../components/Seo";
+import TechTags from "../components/TechTags";
 import { PROJECT_FILTERS, PROJECTS } from "../data/projects";
 import { useLanguage } from "../i18n/context";
 import type {
@@ -45,10 +46,16 @@ export default function ProjectsPage() {
   );
 
   const filteredProjects = useMemo(
-    () =>
-      filter === "all"
-        ? projects
-        : projects.filter((project) => project.category === filter),
+    () => {
+      const visibleProjects =
+        filter === "all"
+          ? projects
+          : projects.filter((project) => project.category === filter);
+
+      return [...visibleProjects].sort(
+        (first, second) => Number(second.images.length > 0) - Number(first.images.length > 0),
+      );
+    },
     [filter, projects],
   );
 
@@ -58,6 +65,9 @@ export default function ProjectsPage() {
       real: 0,
       fun: 0,
       games: 0,
+      ai: 0,
+      study: 0,
+      hackathons: 0,
     };
 
     projects.forEach((project) => {
@@ -132,7 +142,7 @@ export default function ProjectsPage() {
             border="1px solid rgba(255, 255, 255, 0.08)"
             borderRadius="16px"
             boxShadow="0 8px 16px rgba(0, 0, 0, 0.1)">
-            <SimpleGrid columns={{ base: 1, sm: 2 }} gap="10px" p={{ base: "16px", md: "20px" }}>
+            {project.images.length > 0 && <SimpleGrid columns={{ base: 1, sm: 2 }} gap="10px" p={{ base: "16px", md: "20px" }}>
               {project.images.map((src, index) => (
                 <Image
                   key={src}
@@ -142,15 +152,21 @@ export default function ProjectsPage() {
                   h={{ base: "190px", md: "250px" }}
                   borderRadius="12px"
                   objectFit="cover"
+                  loading="lazy"
+                  decoding="async"
                 />
               ))}
-            </SimpleGrid>
+            </SimpleGrid>}
 
             <Box px={{ base: "18px", md: "30px" }} pt={{ base: "18px", md: "20px" }} pb={{ base: "22px", md: "28px" }} color="white" fontSize={{ base: "16px", md: "18px" }} lineHeight="1.65">
+              <Text mb="10px" color="#deb0ff" fontSize="13px" fontWeight="700">
+                {t.projects.filters[project.category]}
+              </Text>
               <Heading as="h2" mb="12px" fontSize={{ base: "22px", md: "28px" }} fontWeight="700">
                 {project.title}
               </Heading>
               <ProjectDescription paragraphs={project.description} />
+              <Box mb="24px"><TechTags technologies={project.stack} /></Box>
               <Flex gap="12px" wrap="wrap">
                 <Button
                   asChild
@@ -165,8 +181,8 @@ export default function ProjectsPage() {
                     {t.projects.viewDetails}
                   </RouterLink>
                 </Button>
-              <Link
-                href={project.liveUrl}
+              {(project.liveUrl || project.sourceUrl) && <Link
+                href={project.liveUrl ?? project.sourceUrl}
                 target="_blank"
                 rel="noreferrer"
                 display="inline-flex"
@@ -184,8 +200,8 @@ export default function ProjectsPage() {
                 textDecoration="none"
                 transition="transform 0.2s ease, box-shadow 0.2s ease"
                 _hover={{ transform: "translateY(-2px)", boxShadow: "0 10px 24px rgba(0, 0, 0, 0.25)" }}>
-                {t.projects.goToPage}
-              </Link>
+                {project.liveUrl ? t.projects.goToPage : t.projects.detail.sourceCode}
+              </Link>}
               </Flex>
             </Box>
           </Reveal>

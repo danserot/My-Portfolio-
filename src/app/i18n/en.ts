@@ -6,6 +6,7 @@ export const en = {
     nav: {
       home: "Home",
       projects: "Projects",
+      certificates: "Certificates",
       about: "About",
       resume: "Resume",
       contact: "Contact",
@@ -29,6 +30,24 @@ export const en = {
     viewerTitle: "Artem Khloptsev resume",
     fallback:
       "Your browser cannot display the PDF here. Open it in a new tab or download the file.",
+  },
+  certificates: {
+    title: "Certificates",
+    subtitle: "Courses and professional achievements in one fast, searchable library.",
+    countLabel: "certificates",
+    searchPlaceholder: "Search certificate titles",
+    allCategories: "All categories",
+    openAction: "Open preview",
+    downloadAction: "Download PDF",
+    closeAction: "Close preview",
+    previewTitle: "Certificate preview",
+    emptyText: "No certificates match your search.",
+    pdfLabel: "PDF document",
+    categories: {
+      AdvancedProgramming: "Advanced programming",
+      ComputationalMathematics: "Computational mathematics",
+      ComputerArchitecture: "Computer architecture",
+    },
   },
   footer: {
     role: "Frontend Developer • Software Engineering Student",
@@ -107,7 +126,7 @@ export const en = {
     detail: {
       backToProjects: "Back to projects",
       liveDemo: "Open live demo",
-      sourceCode: "GitHub profile",
+      sourceCode: "Source code",
       roleTitle: "My role",
       stackTitle: "Technology stack",
       overviewTitle: "Project overview",
@@ -140,11 +159,90 @@ export const en = {
     },
     filters: {
       all: "All",
-      real: "Real projects",
-      fun: "For fun",
+      real: "Web applications",
+      ai: "AI & data",
+      study: "Coursework",
+      hackathons: "Hackathons",
+      fun: "Practice",
       games: "Online games",
     },
     items: {
+      plannaer: {
+        title: "Plannaer — Personal Planner",
+        description: ["A web application for goals, tasks, calendars, habits, and manual finances. Includes a customizable dashboard, weekly reviews, .ics event import, and data export. The Fastify server supports SQLite and PostgreSQL; the assistant requires separate configuration."],
+      },
+      secureguard: {
+        title: "SecureGuard — Landing Page & Event Dashboard",
+        description: ["A retail video review service landing page with an interactive event review demonstration, FAQ, and lead form using Google Apps Script. The preview uses demonstration data; the existing dashboard requires a separate backend."],
+      },
+      resort: {
+        title: "Chernoyarskaya Zhemchuzhina — Resort Website",
+        description: ["A resort website with accommodation listings, a photo gallery, date selection, and a booking interface. Uses Flatpickr, gallery filters, and availability API requests; real reservations require an operational backend."],
+      },
+      supplyai: {
+        title: "SupplyAI — Supplier Search",
+        description: ["A semantic offer search demonstration. FastAPI, multilingual MiniLM, and pgvector select up to five unique suppliers, applying budget and quantity constraints before ranking. The interface explains the selection."],
+      },
+      readdocument: {
+        title: "ReadDocument — Commercial Proposal Extraction",
+        description: ["Model-based document and image processing for company details, line items, text fragments, and citations. Includes JSON and arithmetic validation, token and cost accounting, and result caching. Extracted values and citations need comparison with the original."],
+      },
+      procurement: {
+        title: "Procurement Graph Lab — Purchase Consolidation",
+        description: ["A technical pilot for matching purchase positions using local character-trigram vectors, name/SKU/manufacturer normalization, cosine similarity, and category filtering. The method compares spelling patterns without an external model."],
+      },
+      schedule: {
+        title: "Schedual — Local Schedule",
+        description: ["A React day planner that stores schedule data on the user's device between visits. A practical project exploring application state and personal records."],
+      },
+      "tanstack-todo": {
+        title: "To-do — TanStack Router & Query",
+        description: ["A separate TypeScript practice planner with task creation, status changes, and deletion through an HTTP API. TanStack Query manages requests and list updates; a local /todos API is required."],
+      },
+      "furniture-store": {
+        title: "Online Shop — Furniture Catalog",
+        description: ["A React furniture catalog with category filters, product details, and a shopping cart. A practice implementation using class components; real payment and order processing are not included."],
+      },
+      rentocar: {
+        title: "RentoCar — Car Rental Coursework",
+        description: ["A team midterm project with vehicle listings, categories, a comparison table, and a Bootstrap booking form. Trip pricing and confirmation are demonstrations; no real reservations or payments are processed."],
+      },
+      "web-basics": {
+        title: "Web Technologies 1 — HTML & CSS Basics",
+        description: ["Multi-page coursework with a personal page, profile card, lists, links, and responsive styling. Practice in semantic HTML structure and basic CSS."],
+      },
+      "flexbox-grid": {
+        title: "Field Notes — Flexbox & CSS Grid",
+        description: ["A five-page coursework site with navigation, cards, a layout exercise, a gallery, and a portfolio. Flexbox handles navigation and cards, while CSS Grid provides page layouts."],
+      },
+      "forms-validation": {
+        title: "Web Technologies 4 — Forms & Validation",
+        description: ["Contact and registration forms with HTML5 validation, Bootstrap layouts, and JavaScript feedback. Password checks run only in the browser; no backend or account creation is connected."],
+      },
+      "javascript-basics": {
+        title: "Web Technologies 5 — JavaScript & DOM",
+        description: ["Practical exercises covering variables, arithmetic, DOM updates, mouse and keyboard events, a calculator with input validation, and an in-memory task list. No libraries or backend required."],
+      },
+      "builder-pattern": {
+        title: "Builder Pattern — Computer Configuration",
+        description: ["Java coursework implementing a fluent computer Builder with required and optional properties, preset configurations, and RAM, GPU, and power supply compatibility validation."],
+      },
+      "divide-conquer": {
+        title: "Algorithms — Sorting & QuickSelect",
+        description: ["Java implementations of MergeSort, QuickSort, and QuickSelect. Benchmarks track execution time, comparisons, and recursion depth across input types, alongside JUnit tests and an asymptotic analysis report."],
+      },
+      "workload-engine": {
+        title: "In-Memory Workload Engine — Data Structures",
+        description: ["Custom integer DynamicArray, linked list, and MinHeap implementations in Java 17. Reproducible workloads, operation counters, median timing measurements, CSV results, and comparison plots."],
+      },
+      "game-statistics": {
+        title: "Game Statistics Analyzer",
+        description: ["A Python team final project for match statistics, rankings, leaderboards, player search, and report export. Uses an OOP architecture, JSON/CSV storage, and unit tests."],
+      },
+      hacknu: {
+        title: "HackNU — Zaman AI Prototype",
+        description: ["A hackathon React finance assistant prototype with goals, a demonstration product catalog, and Web Speech API voice input. Chat replies use local rules; banking transactions and LLM integration are not implemented."],
+      },
       goleador: {
         title: "Goleador — Commercial Football Store",
         description: [
@@ -185,8 +283,8 @@ export const en = {
         description: ["A simple website made for my birthday."],
       },
       todo: {
-        title: "To-do website :0",
-        description: ["Minimalistic to-do planner for daily tasks."],
+        title: "Focus — Local Task Planner",
+        description: ["A React application with an inbox, today view, priorities, due dates, search, and undo after deletion. Data persists locally; optional Supabase synchronization requires configuration."],
       },
       pomodoro: {
         title: "Pomodoro Technique Timer",
@@ -198,7 +296,7 @@ export const en = {
       monkey: {
         title: "Monkey Bouncer Game",
         description: [
-          "A simple canvas game where you control a character that jumps on platforms and collects points. Use the left and right arrow keys (or A/D) to move and spacebar to jump. The goal is to score as many points as possible.",
+          "A browser canvas game where a monkey jumps across regular, moving, and breakable trampolines, collects bananas, and scores points. Use the arrow keys or A/D to move and spacebar to restart after losing.",
         ],
       },
     },
@@ -241,6 +339,10 @@ export const en = {
     resume: {
       title: "Resume — Artem Khloptsev",
       description: "View and download Artem Khloptsev's frontend developer resume.",
+    },
+    certificates: {
+      title: "Certificates — Artem Khloptsev",
+      description: "Browse Artem Khloptsev's course and professional certificates with fast PDF previews.",
     },
     contact: {
       title: "Contact — Artem Khloptsev",

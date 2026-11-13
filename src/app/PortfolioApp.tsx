@@ -3,6 +3,7 @@ import { Global } from "@emotion/react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { LanguageProvider } from "./i18n/context";
 import AboutPage from "./pages/AboutPage";
+import CertificatesPage from "./pages/CertificatesPage";
 import ContactPage from "./pages/ContactPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -32,6 +33,7 @@ export default function PortfolioApp() {
               <Route path="/" element={<HomePage />} />
               <Route path="/projects" element={<ProjectsPage />} />
               <Route path="/projects/:projectId" element={<ProjectDetailsPage />} />
+              <Route path="/certificates" element={<CertificatesPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/resume" element={<ResumePage />} />
               <Route path="/contact" element={<ContactPage />} />
