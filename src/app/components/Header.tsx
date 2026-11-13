@@ -151,6 +151,7 @@ export default function Header() {
         <Flex as="nav" display={{ base: "none", md: "flex" }} align="center" justify="space-around" gap="22px" flex="1" maxW="760px">
           <NavItem to="/" label={labels.home} end />
           <NavItem to="/projects" label={labels.projects} />
+          <NavItem to="/certificates" label={labels.certificates} />
           <NavItem to="/about" label={labels.about} />
           <NavItem to="/resume" label={labels.resume} />
           <NavItem to="/contact" label={labels.contact} />
@@ -194,6 +195,7 @@ export default function Header() {
           boxShadow="0 18px 40px rgba(0, 0, 0, 0.32)">
           <NavItem to="/" label={labels.home} end onClick={closeMenu} />
           <NavItem to="/projects" label={labels.projects} onClick={closeMenu} />
+          <NavItem to="/certificates" label={labels.certificates} onClick={closeMenu} />
           <NavItem to="/about" label={labels.about} onClick={closeMenu} />
           <NavItem to="/resume" label={labels.resume} onClick={closeMenu} />
           <NavItem to="/contact" label={labels.contact} onClick={closeMenu} />

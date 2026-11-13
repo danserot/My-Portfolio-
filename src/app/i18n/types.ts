@@ -9,7 +9,7 @@ export type AboutRowId =
   | "hackathons"
   | "startup"
   | "university";
-export type ProjectCategory = "real" | "fun" | "games";
+export type ProjectCategory = "real" | "fun" | "games" | "ai" | "study" | "hackathons";
 export type ProjectFilter = "all" | ProjectCategory;
 export type ProjectId =
   | "goleador"
@@ -21,7 +21,26 @@ export type ProjectId =
   | "birthday"
   | "todo"
   | "pomodoro"
-  | "monkey";
+  | "monkey"
+  | "plannaer"
+  | "secureguard"
+  | "resort"
+  | "supplyai"
+  | "readdocument"
+  | "procurement"
+  | "schedule"
+  | "tanstack-todo"
+  | "furniture-store"
+  | "rentocar"
+  | "web-basics"
+  | "flexbox-grid"
+  | "forms-validation"
+  | "javascript-basics"
+  | "builder-pattern"
+  | "divide-conquer"
+  | "workload-engine"
+  | "game-statistics"
+  | "hacknu";
 
 interface TranslationSection {
   header: {
@@ -31,6 +50,7 @@ interface TranslationSection {
     nav: {
       home: string;
       projects: string;
+      certificates: string;
       about: string;
       resume: string;
       contact: string;
@@ -52,6 +72,20 @@ interface TranslationSection {
     openAction: string;
     viewerTitle: string;
     fallback: string;
+  };
+  certificates: {
+    title: string;
+    subtitle: string;
+    countLabel: string;
+    searchPlaceholder: string;
+    allCategories: string;
+    openAction: string;
+    downloadAction: string;
+    closeAction: string;
+    previewTitle: string;
+    emptyText: string;
+    pdfLabel: string;
+    categories: Record<string, string>;
   };
   footer: {
     role: string;
@@ -91,10 +125,10 @@ interface TranslationSection {
       galleryTitle: string;
       notFoundTitle: string;
       notFoundText: string;
-      byCategory: Record<
+      byCategory: Partial<Record<
         ProjectCategory,
         { role: string; challenge: string; approach: string; result: string }
-      >;
+      >>;
     };
     filters: Record<ProjectFilter, string>;
     items: Record<ProjectId, { title: string; description: string[] }>;
@@ -126,6 +160,7 @@ interface TranslationSection {
     projects: { title: string; description: string };
     about: { title: string; description: string };
     resume: { title: string; description: string };
+    certificates: { title: string; description: string };
     contact: { title: string; description: string };
   };
 }
